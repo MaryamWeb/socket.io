@@ -19,5 +19,6 @@ io.on('connection', (socket) => {
 	socket.on('incoming message', (data) => {
 		//listens for the 'incoming message' sent from the client
 		console.log(data);
+		socket.broadcast.emit('newMessage', data);
 	});
 });

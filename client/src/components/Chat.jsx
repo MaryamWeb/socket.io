@@ -9,6 +9,7 @@ const{messages, message, chatHandler, submitMessage}=props
                 <input type="textarea" onChange={chatHandler} value={message}/>
                 <button>Send</button>
             </form>
+            {JSON.stringify(messages)}
 		</div>
 	);
 };

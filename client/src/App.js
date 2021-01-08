@@ -11,11 +11,18 @@ function App() {
 	const [ messages, setMessages ] = useState([]);
 	const [ message, setMessage ] = useState('');
 
-	useEffect(() => {
-		console.log('Checking..');
-		socket.on('Welcome', (data) => console.log(data));
-		// return () => socket.disconnect(true);
-	}, []);
+	useEffect(
+		() => {
+			console.log('Checking..');
+			return () => socket.disconnect(true);
+		},
+		[ socket ]
+	);
+	socket.on('Welcome', (data) => console.log(data));
+	socket.on('newMessage', (data) => {
+		console.log(data);
+		setMessages([ data, ...messages ]);
+	});
 
 	const setName = (e) => {
 		e.preventDefault();
@@ -24,6 +31,7 @@ function App() {
 	const sendMessage = (e) => {
 		e.preventDefault();
 		console.log({ user, message });
+		setMessages([ { user, message }, ...messages ]);
 		socket.emit('incoming message', { user, message }); //the data we are sending to the server
 	};
 	return (
