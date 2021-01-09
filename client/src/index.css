@@ -1,13 +1,25 @@
+:root {
+	--yellow-color: #ffbe40;
+	--gray-color: #f4f4f4;
+	--dark-grey-color: #263238;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background-color: var(--gray-color);
+	font-family: 'Concert One', cursive;
+	color: var(--dark-grey-color);
+}
+.color-yellow {
+	color: var(--yellow-color);
+}
+.bg-yellow {
+	background-color: var(--yellow-color);
+}
+/* --------------------------Username-------------------------- */
+.navbar span {
+	font-size: 1.3rem;
+}
+.btn-cont:hover {
+	background-color: #e7ab31;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* ----------------------------Chat---------------------------- */

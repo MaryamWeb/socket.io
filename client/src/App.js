@@ -35,7 +35,7 @@ function App() {
 		socket.emit('incoming message', { user, message }); //the data we are sending to the server
 	};
 	return (
-		<div className="container mt-5">
+		<>
 			<Router>
 				<Username path="/" user={user} userHandler={(e) => setUser(e.target.value)} setName={setName} />
 				<Chat
@@ -46,7 +46,7 @@ function App() {
 					chatHandler={(e) => setMessage(e.target.value)}
 				/>
 			</Router>
-		</div>
+		</>
 	);
 }
 
