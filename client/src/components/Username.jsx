@@ -12,9 +12,9 @@ const{user, userHandler, setName}=props;
                     <img src={`${ChattingImg}`} alt="chatting" className="img-fluid mb-3"/>
                 </div>
                 <div className="col-md-6 order-sm-2">
-                <h1>Welcome to JoyChat</h1>
+                    <h1>Welcome to JoyChat</h1>
                     <p className="text-muted mb-4">A place where you can chat with friends</p>
-                    <form onSubmit={setName}>
+                    <form>
                         <div className="row ">
                             <div className="input-group col-lg-12 mb-4 pl-0">
                                 <label className="col-sm-4 col-form-label">Enter Username:</label>
@@ -25,7 +25,7 @@ const{user, userHandler, setName}=props;
                             <div className="input-group col-lg-12 mb-4 pl-0">
                             <label className="col-sm-4 col-form-label"></label>
                                 <div className="col-sm-8">
-                                    <button type="button" className="btn-block btn bg-yellow btn-cont">Continue</button>
+                                    <button type="button" className="btn-block btn bg-yellow btn-cont" onClick={setName}>Continue</button>
                                 </div>
                             </div>
                         </div>
