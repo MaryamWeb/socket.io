@@ -30,6 +30,5 @@ body {
 	height: auto;
 }
 .list-group-item.single-message {
-	background-color: var(--yellow-color);
 	border-radius: 0.7rem;
 }

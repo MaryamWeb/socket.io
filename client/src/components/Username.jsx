@@ -1,7 +1,7 @@
 import ChattingImg from '../images/chatting.png';
 
 const Username = (props) => {
-const{user, userHandler, setName}=props;
+const{user, userHandler, color, colorHandler, setName}=props;
 	return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light py-3">
@@ -20,6 +20,12 @@ const{user, userHandler, setName}=props;
                                 <label className="col-sm-4 col-form-label">Enter Username:</label>
                                 <div className="col-sm-8">
                                     <input type="text" className="form-control" onChange={userHandler} value={user}/>
+                                </div>
+                            </div>
+                            <div className="input-group col-lg-12 mb-4 pl-0">
+                                <label className="col-sm-4 col-form-label">Chosse message color:</label>
+                                <div className="col-sm-8">
+                                    <input type="color" className="form-control" onChange={colorHandler} value={color}/>
                                 </div>
                             </div>
                             <div className="input-group col-lg-12 mb-4 pl-0">

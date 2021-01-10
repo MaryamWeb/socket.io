@@ -12,8 +12,8 @@ console.log(messages)
                 <ul className="list-group pt-2 pl-3 all-messages">
                 {messages.map((m, i) => (
                     <>
-                    <small class="text-muted">{m.user}</small>
-                    <li key={i} className="col-md-10 col-lg-6 p-2 mb-3 list-group-item single-message">
+                    <small className="text-muted">{m.user}</small>
+                    <li key={i} className="col-md-10 col-lg-6 p-2 mb-3 list-group-item single-message" style={{backgroundColor:`${m.color}`}}>
                     {m.message}
                     </li>
                     </>

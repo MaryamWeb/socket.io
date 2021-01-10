@@ -8,6 +8,7 @@ import Chat from './components/Chat';
 function App() {
 	const [ socket ] = useState(() => io(':7000'));
 	const [ user, setUser ] = useState('');
+	const [ color, setColor ] = useState('#ffbe40');
 	const [ messages, setMessages ] = useState([]);
 	const [ message, setMessage ] = useState('');
 
@@ -30,23 +31,29 @@ function App() {
 	};
 	const sendMessage = (e) => {
 		e.preventDefault();
-		console.log({ user, message });
-		setMessages([ { user, message }, ...messages ]);
-		socket.emit('incoming message', { user, message }); //the data we are sending to the server
+		console.log({ user, message, color });
+		setMessages([ { user, message, color }, ...messages ]);
+		socket.emit('incoming message', { user, message, color }); //the data we are sending to the server
+		setMessage('');
 	};
 	return (
-		<>
-			<Router>
-				<Username path="/" user={user} userHandler={(e) => setUser(e.target.value)} setName={setName} />
-				<Chat
-					path="/chat"
-					messages={messages}
-					submitMessage={sendMessage}
-					message={message}
-					chatHandler={(e) => setMessage(e.target.value)}
-				/>
-			</Router>
-		</>
+		<Router>
+			<Username
+				path="/"
+				user={user}
+				userHandler={(e) => setUser(e.target.value)}
+				color={color}
+				colorHandler={(e) => setColor(e.target.value)}
+				setName={setName}
+			/>
+			<Chat
+				path="/chat"
+				messages={messages}
+				submitMessage={sendMessage}
+				message={message}
+				chatHandler={(e) => setMessage(e.target.value)}
+			/>
+		</Router>
 	);
 }
 
