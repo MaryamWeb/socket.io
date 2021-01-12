@@ -16,4 +16,4 @@ Image: `https://storyset.com/`<br>
 Style: Bootstrap `https://getbootstrap.com/`<br>
 
 ## Project Screen Shot:
-![alt text](src/images/userpage.png "Username Page")
+![alt text](client/src/images/userpage.png "Username Page")
