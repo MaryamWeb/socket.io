@@ -32,3 +32,12 @@ body {
 .list-group-item.single-message {
 	border-radius: 0.7rem;
 }
+small {
+	text-transform: capitalize;
+}
+.time {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 70%;
+}

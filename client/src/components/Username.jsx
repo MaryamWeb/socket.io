@@ -23,7 +23,7 @@ const{user, userHandler, color, colorHandler, setName}=props;
                                 </div>
                             </div>
                             <div className="input-group col-lg-12 mb-4 pl-0">
-                                <label className="col-sm-4 col-form-label">Chosse message color:</label>
+                                <label className="col-sm-4 col-form-label">Message color:</label>
                                 <div className="col-sm-8">
                                     <input type="color" className="form-control" onChange={colorHandler} value={color}/>
                                 </div>

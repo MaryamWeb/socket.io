@@ -21,7 +21,7 @@ function App() {
 	);
 	socket.on('Welcome', (data) => console.log(data));
 	socket.on('newMessage', (data) => {
-		console.log(data);
+		// console.log(data);
 		setMessages([ data, ...messages ]);
 	});
 
@@ -31,9 +31,10 @@ function App() {
 	};
 	const sendMessage = (e) => {
 		e.preventDefault();
-		console.log({ user, message, color });
-		setMessages([ { user, message, color }, ...messages ]);
-		socket.emit('incoming message', { user, message, color }); //the data we are sending to the server
+		const time = new Date();
+		// console.log({ user, message});
+		setMessages([ { user, message, color, time }, ...messages ]);
+		socket.emit('incoming message', { user, message, color, time }); //the data we are sending to the server
 		setMessage('');
 	};
 	return (

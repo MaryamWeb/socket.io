@@ -1,8 +1,8 @@
 import React from 'react';
+import moment from 'moment';
 
 const Chat = (props) => {
 const{messages, message, chatHandler, submitMessage}=props
-console.log(messages)
 	return (
 		<div className="container">
             <nav className="navbar navbar-expand-lg navbar-light py-3">
@@ -11,12 +11,13 @@ console.log(messages)
             <div id="chat-container" className="px-3 bg-white overflow-auto">
                 <ul className="list-group pt-2 pl-3 all-messages">
                 {messages.map((m, i) => (
-                    <>
-                    <small className="text-muted">{m.user}</small>
-                    <li key={i} className="col-md-10 col-lg-6 p-2 mb-3 list-group-item single-message" style={{backgroundColor:`${m.color}`}}>
-                    {m.message}
-                    </li>
-                    </>
+                    <div key={i}>
+                        <small className="text-muted">{m.user }{m.sender}</small>
+                        <li className="col-md-10 mb-3 col-lg-6 p-2 list-group-item single-message" style={{backgroundColor:`${m.color}`}}>
+                        {m.message}
+                        <small className="time text-muted pr-2">{moment(m.time).format('LT')}</small>
+                        </li>
+                    </div>
                 ))}
                 </ul>
             </div>
